@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAIZ - Resiliencia, Apoyo, Integridad, Zona Segura</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para usar la fuente Inter y un esquema de color calmado -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1c4e7c', // Azul oscuro profesional
+                        'secondary-mint': '#63b4b8', // Menta calmante
+                        'accent-yellow': '#fbbd08', // Amarillo para acentos
+                        'background-light': '#f9f9f9', // Fondo muy suave
+                        'deep-green': '#1e5f38', // Color para el logo RAIZ (Tierra y crecimiento)
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para efectos visuales */
+        .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(30, 95, 56, 0.15); /* Sombra sutil con color verde */
+        }
+        .text-shadow-custom {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* CSS para el Dropdown (Se utiliza la clase group de Tailwind y :hover) */
+        .group:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans bg-background-light text-gray-800 antialiased">
+
+    <!-- Navbar Fija y Responsiva (RAIZ) -->
+    <header id="main-header" class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="header-content" class="flex justify-between items-center h-26">
+                <!-- Logo/Título RAIZ con Ícono de Árbol -->
+                <a href="#" class="flex-shrink-0 flex items-center">
+                    <!-- Reemplaza el SVG por la imagen -->
+                    <img src="img.jpg" alt="Logo RAIZ" class="h-24 w-30 rounded-full mr-4 object-cover" />
+                    <span class="text-3xl md:text-4xl font-extrabold font-sans text-deep-green tracking-wide">
+                        R<span class="text-secondary-mint">A</span>I<span class="text-secondary-mint">Z</span>
+                    </span>
+                </a>
+
+                <!-- Menú Desktop con Dropdowns -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    
+                    <!-- Dropdown 1: Atención -->
+                    <div class="relative group">
+                        <button class="text-primary-blue hover:text-deep-green transition duration-150 ease-in-out font-medium h-26 flex items-center">
+                            Atención
+                            <!-- Icono de flecha para indicar dropdown -->
+                            <svg class="ml-1 h-4 w-4 transform group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Menú desplegable -->
+                        <div class="dropdown-menu absolute hidden w-64 bg-white shadow-xl rounded-lg py-2 mt-0 border-t-4 border-deep-green z-50">
+                            <a href="#servicios" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 font-medium">Terapia Individual</a>
+                            <a href="#servicios" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 font-medium">Terapia Familiar y de Pareja</a>
+                            <a href="#servicios" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 font-medium">Evaluación Especializada</a>
+                            <a href="#servicios" class="block px-4 py-3 text-sm text-primary-blue font-semibold hover:bg-gray-50 border-t mt-1">Ver Todos los Servicios &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown 2: Educación -->
+                    <div class="relative group">
+                        <button class="text-primary-blue hover:text-deep-green transition duration-150 ease-in-out font-medium h-26 flex items-center">
+                            Recursos
+                            <!-- Icono de flecha para indicar dropdown -->
+                            <svg class="ml-1 h-4 w-4 transform group-hover:rotate-180 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Menú desplegable con subtítulos de recursos -->
+                        <div class="dropdown-menu absolute hidden w-80 bg-white shadow-xl rounded-lg py-2 mt-0 border-t-4 border-deep-green right-0 z-50 group-hover:block">
+                            <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="prevencion-abuso-info">Información General</button>
+                            <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="prevencion-abuso">¿Cómo prevenir el Abuso Sexual Infantil?</button>
+                            <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="senales-abuso">¿Cómo saber cuándo un niño es víctima de Abuso Sexual?</button>
+                            <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="ayuda-abuso">¿Dónde buscar ayuda?</button>
+                            <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="prevencion-escuela">Prevención del Abuso Sexual en la Escuela</button>
+                            <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="raiz-abuso">¿Qué hace RAÍZ?</button>
+                            
+                        </div>
+                    </div>
+
+                    <a href="#contacto" class="text-white bg-deep-green hover:bg-secondary-mint px-6 py-3 rounded-full font-bold text-xl transition duration-300 shadow-lg ml-6 font-sans">Agenda tu Cita</a>
+                </nav>
+
+                <!-- Botón de Menú Móvil -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-primary-blue hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-deep-green">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable (oculto por defecto) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white shadow-xl">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                
+                <!-- Atención Group (Mobile) -->
+                <p class="px-3 pt-2 text-base font-bold text-deep-green">Atención</p>
+                <a href="#servicios" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Terapia Individual</a>
+                <a href="#servicios" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Terapia Familiar y de Pareja</a>
+                <a href="#servicios" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Evaluación Especializada</a>
+                
+                <!-- Educación Group (Mobile) -->
+                <p class="px-3 pt-4 text-base font-bold text-deep-green">Recursos</p>
+                <a href="#recursos" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Artículos y Guías</a>
+                <a href="#recursos" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Temas de Interés</a>
+                <a href="#recursos" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Eventos y Talleres</a>
+
+                <!-- CTA -->
+                <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-deep-green text-center hover:bg-secondary-mint mt-4">Agenda tu Cita</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero Principal (Eslogan RAIZ) -->
+        <section class="relative bg-white pt-20 pb-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-16">
+                    <!-- Contenido de Texto -->
+                    <div class="col-span-12 lg:col-span-6 flex flex-col justify-center text-center lg:text-left">
+                        <span class="text-deep-green text-2xl font-black uppercase tracking-widest mb-5 font-sans">R.A.I.Z.</span>
+                        <h1 class="text-6xl md:text-7xl font-black font-sans text-primary-blue leading-tight mb-10 text-shadow-custom">
+                            Resiliencia, Apoyo, Integridad, Zona Segura.
+                        </h1>
+                        <p class="text-2xl md:text-3xl text-gray-600 mb-12 max-w-xl lg:max-w-none mx-auto lg:mx-0 font-sans">
+                            Somos tu <b>Zona Segura</b> para construir <b>Resiliencia</b>. Ofrecemos <b>Apoyo</b> profesional con <b>Integridad</b> en cada sesión.
+                        </p>
+                        <div class="flex justify-center lg:justify-start space-x-6">
+                            <a href="#contacto" class="px-10 py-4 bg-deep-green text-white text-2xl font-bold rounded-full hover:bg-secondary-mint transition duration-300 shadow-xl transform hover:scale-105 font-sans">
+                                Agenda tu Consulta
+                            </a>
+                            <a href="#servicios" class="px-10 py-4 text-deep-green border-2 border-deep-green text-2xl font-bold rounded-full hover:bg-deep-green hover:text-white transition duration-300 transform hover:scale-105 font-sans">
+                                Ver Servicios
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Imagen Hero grande con partículas -->
+                    <div class="col-span-12 lg:col-span-6 mt-16 lg:mt-0 relative flex items-center justify-center">
+                        <div class="relative w-full flex items-center justify-center">
+                            <img 
+                                src="C:/Users/ediva/Downloads/image (1).png" 
+                                alt="RAIZ : Crece con Apoyo" 
+                                class="w-full max-w-2xl h-[440px] object-cover rounded-3xl shadow-2xl"
+                                style="
+                                    box-shadow: 0 0 120px 0 rgba(30,95,56,0.25), 0 0 0 32px rgba(30,95,56,0.10);
+                                    border: 12px solid rgba(99,180,184,0.18);
+                                "
+                            />
+                            <!-- Partículas verdes difuminadas más grandes -->
+                            <div class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-secondary-mint opacity-30 blur-2xl"></div>
+                            <div class="absolute -bottom-20 -right-20 w-56 h-56 rounded-full bg-deep-green opacity-20 blur-2xl"></div>
+                            <div class="absolute top-1/2 left-0 w-24 h-24 rounded-full bg-secondary-mint opacity-20 blur-2xl"></div>
+                        </div>
+                        <div class="absolute bottom-0 right-0 p-6 bg-deep-green/80 text-white rounded-tl-2xl text-xl italic font-sans">
+                            "Cultivando la fuerza desde la raíz."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Informativa: Prevención del Abuso Sexual Infantil (sin container, solo texto como antes) -->
+        <section id="prevencion-abuso-info" class="py-20 bg-white">
+            <h2 class="text-4xl md:text-5xl font-black text-gray-800 mb-6 text-center font-sans">
+                El abuso sexual es una realidad que enfrentan las personas desde su primera infancia hasta la adultez. Prevenir el abuso sexual es responsabilidad de todos.
+            </h2>
+            <div class="max-w-4xl mx-auto px-4">
+                <p class="text-lg text-gray-700 mb-4 font-sans">
+                    Es fundamental enseñar a niñas y niños el conocimiento, respeto y cuidado de su cuerpo, y hacerlos conscientes para que se digan a sí mismos: <span class="font-bold text-green-700">“Mi cuerpo es mi territorio”</span>.
+                </p>
+                <p class="text-lg text-gray-700 mb-4 font-sans">
+                    No hay nada mejor como la prevención, especialmente en la infancia, pues en un abrir y cerrar de ojos puede cambiar para siempre su vida. Por ello, debemos explicarles la diferencia entre una expresión de cariño y una caricia sexual.
+                </p>
+                <p class="text-lg text-gray-700 mb-4 font-sans">
+                    Es nuestra tarea ayudarles a comprender que cualquier persona, incluso un familiar, puede lastimarlos o hacerlos sentir mal. Nadie puede tocar su cuerpo o hacerles caricias que los hagan sentir incómodos, aun siendo personas cercanas. Deben aprender a reconocer que hay secretos que lastiman y que no pueden quedar como secretos.
+                </p>
+                <p class="text-lg text-gray-700 font-sans">
+                    Educar a niñas y niños en el reconocimiento, autocuidado y respeto de su cuerpo con un lenguaje claro, sencillo e información de acuerdo a su edad, es la mejor medida que los protegerá del abuso sexual.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección de recursos extensibles con container y animación mejorada -->
+        <section id="recursos" class="py-20 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-black text-primary-blue mb-12 text-center font-sans text-shadow-custom">
+                    Recursos para la Prevención y Apoyo
+                </h2>
+                <!-- Cada pregunta es un bloque expandible independiente con animación suave -->
+                <div class="mb-8">
+                    <button class="w-full text-left px-6 py-4 bg-background-light rounded-xl shadow-md font-bold text-2xl text-primary-blue flex items-center justify-between recurso-toggle" data-target="prevencion-abuso">
+                        ¿Cómo prevenir el Abuso Sexual Infantil?
+                        <span class="ml-2 text-xl">&#9660;</span>
+                    </button>
+                    <div id="prevencion-abuso" class="recurso-content hidden overflow-hidden transition-all duration-500 bg-white rounded-xl shadow-inner border-l-4 border-secondary-mint px-6">
+                        <ul class="list-disc pl-6 text-lg text-gray-700 space-y-2 font-sans py-4">
+                            <li>Habla con claridad a los niños acerca de los riesgos que los rodean.</li>
+                            <li>Conversa con tus hijos y bríndales confianza.</li>
+                            <li>Debes estar pendiente de las salidas al parque o a la casa de amigos.</li>
+                            <li>Los niños deben conocer los teléfonos de las personas de confianza.</li>
+                            <li>Enséñale a tu hijo que existen partes del cuerpo íntimas y fortalece su autoestima.</li>
+                            <li>No envíes a tus hijos a hacer mandados solos.</li>
+                            <li>Enséñale a tu hijo la diferencia entre secretos malos y buenos.</li>
+                            <li>Supervisa los sitios web que visitan tus hijos.</li>
+                            <li>Enséñale a tus hijos a no aceptar ‘regalos’ a cambio de favores.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <button class="w-full text-left px-6 py-4 bg-background-light rounded-xl shadow-md font-bold text-2xl text-primary-blue flex items-center justify-between recurso-toggle" data-target="senales-abuso">
+                        ¿Cómo saber cuándo un niño es víctima de Abuso Sexual?
+                        <span class="ml-2 text-xl">&#9660;</span>
+                    </button>
+                    <div id="senales-abuso" class="recurso-content hidden overflow-hidden transition-all duration-500 bg-white rounded-xl shadow-inner border-l-4 border-accent-yellow px-6">
+                        <ul class="list-disc pl-6 text-lg text-gray-700 space-y-2 font-sans py-4">
+                            <li>Pesadillas y problemas de sueño.</li>
+                            <li>Desórdenes alimentarios.</li>
+                            <li>Ideas e intentos suicidas.</li>
+                            <li>Cambios en el rendimiento escolar.</li>
+                            <li>Alteraciones del lenguaje y la motricidad.</li>
+                            <li>Aislamiento.</li>
+                            <li>Agresividad.</li>
+                            <li>Miedo generalizado o ante la presencia de determinadas personas.</li>
+                            <li>Dificultad para expresar sentimientos.</li>
+                            <li>Conocimiento y términos sexuales inapropiados para la edad.</li>
+                        </ul>
+                        <p class="text-base text-gray-500 mt-4 font-sans">
+                            La presencia de alguno de estos comportamientos no siempre implica que un niño o niña ha sido víctima de abuso sexual.
+                        </p>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <button class="w-full text-left px-6 py-4 bg-background-light rounded-xl shadow-md font-bold text-2xl text-primary-blue flex items-center justify-between recurso-toggle" data-target="ayuda-abuso">
+                        ¿Dónde buscar ayuda?
+                        <span class="ml-2 text-xl">&#9660;</span>
+                    </button>
+                    <div id="ayuda-abuso" class="recurso-content hidden overflow-hidden transition-all duration-500 bg-white rounded-xl shadow-inner border-l-4 border-deep-green px-6">
+                        <ul class="list-disc pl-6 text-lg text-gray-700 space-y-2 font-sans py-4">
+                            <li>Llamar a la línea de atención del Instituto Colombiano de Bienestar Familiar: <span class="font-bold text-primary-blue">141</span></li>
+                            <li>Unidad de Delitos Sexuales</li>
+                            <li>Fiscalía</li>
+                            <li>Comisarías de Familia</li>
+                            <li>Estaciones de Policía</li>
+                            <li>Clínicas y Hospitales</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <button class="w-full text-left px-6 py-4 bg-background-light rounded-xl shadow-md font-bold text-2xl text-primary-blue flex items-center justify-between recurso-toggle" data-target="prevencion-escuela">
+                        Prevención del Abuso Sexual en la Escuela
+                        <span class="ml-2 text-xl">&#9660;</span>
+                    </button>
+                    <div id="prevencion-escuela" class="recurso-content hidden overflow-hidden transition-all duration-500 bg-white rounded-xl shadow-inner border-l-4 border-secondary-mint px-6">
+                        <p class="text-lg text-gray-700 mb-2 font-sans py-4">
+                            Para prevenir el abuso en la escuela se debe fomentar la comunicación abierta entre alumnos y adultos, educar en valores como el respeto y la empatía, enseñar estrategias de asertividad, establecer políticas de tolerancia cero y estar atentos a las señales.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-primary-blue mb-2">Para los Alumnos</h4>
+                                <ul class="list-disc pl-6 text-gray-700 space-y-1 text-base">
+                                    <li>Comunícate y confía en adultos.</li>
+                                    <li>Sé asertivo y defiende tu derecho a ser respetado.</li>
+                                    <li>No recurras a la violencia.</li>
+                                    <li>Fomenta el respeto.</li>
+                                    <li>Sé un buen amigo y apoya a los demás.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary-blue mb-2">Para los Adultos</h4>
+                                <ul class="list-disc pl-6 text-gray-700 space-y-1 text-base">
+                                    <li>Educa en valores y empatía.</li>
+                                    <li>Fomenta la comunicación abierta.</li>
+                                    <li>Mantente atento a las señales.</li>
+                                    <li>Crea un ambiente seguro y políticas claras.</li>
+                                    <li>Participa activamente en la vida escolar.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mueve ¿Qué hace RAÍZ? aquí, como último extensible -->
+                <div class="mb-8">
+                    <button class="w-full text-left px-6 py-4 bg-background-light rounded-xl shadow-md font-bold text-2xl text-primary-blue flex items-center justify-between recurso-toggle" data-target="raiz-abuso">
+                        ¿Qué hace RAÍZ?
+                        <span class="ml-2 text-xl">&#9660;</span>
+                    </button>
+                    <div id="raiz-abuso" class="recurso-content hidden overflow-hidden transition-all duration-500 bg-white rounded-xl shadow-inner border-l-4 border-primary-blue px-6">
+                        <p class="text-lg text-gray-700 mb-2 font-sans py-4">
+                            En <span class="font-bold text-primary-blue">RAÍZ</span> fortalecemos familias para desarrollar capacidades de cuidado y protección. Proteger la infancia es responsabilidad de todos.
+                        </p>
+                        <p class="text-base text-gray-500 font-sans">
+                            *Cuando mencionamos niños, incluimos niños y niñas.<br>
+                            *Cuando mencionamos hijos, incluimos hijos e hijas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios debajo de recursos -->
+        <section id="servicios" class="py-20 bg-background-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-primary-blue mb-4">Nuestros Servicios Esenciales (Atención)</h2>
+                <!-- Elimina el texto descriptivo largo y resúmelo -->
+                <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Apoyo psicológico personalizado para personas y familias.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Tarjeta 1: Terapia Individual -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-secondary-mint">
+                        <div class="text-5xl text-secondary-mint mb-4">🧠</div>
+                        <h3 class="text-2xl font-bold text-primary-blue mb-3">Terapia Individual</h3>
+                        <p class="text-gray-600">
+                            Sesiones personalizadas para abordar ansiedad, depresión o problemas de comportamiento.
+                        </p>
+                        <a href="#contacto" class="mt-4 inline-block text-secondary-mint font-semibold hover:underline">Saber Más &rarr;</a>
+                    </div>
+                    
+                    <!-- Tarjeta 2: Terapia Familiar -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-deep-green">
+                        <div class="text-5xl text-deep-green mb-4">👪</div>
+                        <h3 class="text-2xl font-bold text-primary-blue mb-3">Terapia Familiar</h3>
+                        <p class="text-gray-600">
+                            Mejora la comunicación, resuelve conflictos y fortalece los lazos familiares.
+                        </p>
+                        <a href="#contacto" class="mt-4 inline-block text-deep-green font-semibold hover:underline">Saber Más &rarr;</a>
+                    </div>
+
+                    <!-- Tarjeta 3: Evaluaciones -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-accent-yellow">
+                        <div class="text-5xl text-accent-yellow mb-4">🔍</div>
+                        <h3 class="text-2xl font-bold text-primary-blue mb-3">Evaluación Especializada</h3>
+                        <p class="text-gray-600">
+                            Diagnósticos precisos para TDAH, trastornos del aprendizaje y otras dificultades.
+                        </p>
+                        <a href="#contacto" class="mt-4 inline-block text-accent-yellow font-semibold hover:underline">Saber Más &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final / Contacto -->
+        <section id="contacto" class="py-20 bg-background-light">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-primary-blue mb-4 text-shadow-custom text-center">El primer paso es hoy.</h2>
+                <p class="text-xl text-gray-600 mb-8 text-center">
+                    Contáctanos para agendar una consulta inicial o resolver cualquier duda.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Bloque llamar -->
+                    <div class="flex flex-col items-center justify-center bg-white rounded-2xl shadow-xl p-10 border-t-4 border-secondary-mint">
+                        <button id="btn-copiar-tel" type="button" class="inline-flex items-center justify-center px-10 py-4 bg-secondary-mint text-primary-blue text-xl font-bold rounded-full hover:bg-primary-blue hover:text-white transition duration-300 shadow-xl transform hover:scale-105 mb-6">
+                            <svg class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                            Llamar Ahora
+                        </button>
+                        <div class="text-lg text-gray-700 mt-2">Teléfono: <span class="font-bold text-primary-blue">+57 300 214 3384</span></div>
+                        <!-- Notificación de copiado -->
+                        <div id="copiado-notif" class="mt-4 fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg font-semibold text-lg opacity-0 pointer-events-none transition-all duration-500 z-50">
+                            Número copiado al portapapeles
+                        </div>
+                    </div>
+                    <!-- Bloque formulario -->
+                    <form id="form-cita" action="https://formspree.io/f/xwprbvlp" method="POST" class="bg-secondary-mint/30 rounded-2xl p-10 shadow-xl border-t-4 border-primary-blue w-full">
+                        <h3 class="text-3xl font-bold text-primary-blue mb-6 text-center">Agenda tu Cita</h3>
+                        <div class="mb-6">
+                            <label for="nombre" class="block text-primary-blue font-semibold mb-2">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-primary-blue font-semibold mb-2">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
+                        </div>
+                        <div class="mb-6">
+                            <label for="mensaje" class="block text-primary-blue font-semibold mb-2">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-blue text-white font-bold py-4 rounded-lg hover:bg-secondary-mint hover:text-primary-blue transition duration-300 text-xl">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- El pie de página ha sido eliminado según tu solicitud. -->
+
+    <script>
+        // Lógica para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar el menú móvil al hacer click en un enlace (para facilitar la navegación)
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Pequeño timeout para que el scroll se complete antes de cerrar el menú
+                setTimeout(() => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }, 150);
+            });
+        });
+
+        // Scroll suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Copiar número y mostrar notificación animada
+        document.getElementById('btn-copiar-tel').addEventListener('click', function() {
+            const tel = '+573002143384';
+            navigator.clipboard.writeText(tel).then(() => {
+                const notif = document.getElementById('copiado-notif');
+                notif.classList.remove('opacity-0');
+                notif.classList.add('opacity-100');
+                setTimeout(() => {
+                    notif.classList.remove('opacity-100');
+                    notif.classList.add('opacity-0');
+                }, 2000);
+            });
+        });
+
+        // Elimina la animación del header al hacer scroll
+        // (borra todo el bloque que cambia h-32/h-20 en el header)
+
+        // Recursos: expand/collapse subsecciones con animación suave y solo una abierta
+        document.querySelectorAll('.recurso-toggle').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const target = document.getElementById(this.dataset.target);
+                document.querySelectorAll('.recurso-content').forEach(content => {
+                    if (content !== target) {
+                        content.classList.add('hidden');
+                        content.style.maxHeight = null;
+                    }
+                });
+                if (target.classList.contains('hidden')) {
+                    target.classList.remove('hidden');
+                    target.style.maxHeight = '0px';
+                    setTimeout(() => {
+                        target.style.maxHeight = target.scrollHeight + 'px';
+                    }, 10);
+                    setTimeout(() => {
+                        target.style.maxHeight = null;
+                    }, 400);
+                } else {
+                    // Animación de cierre
+                    target.style.maxHeight = target.scrollHeight + 'px';
+                    setTimeout(() => {
+                        target.style.maxHeight = '0px';
+                    }, 10);
+                    setTimeout(() => {
+                        target.classList.add('hidden');
+                        target.style.maxHeight = null;
+                    }, 400);
+                }
+            });
+        });
+
+        // Recursos: scroll y expandir al hacer click en el dropdown
+        document.querySelectorAll('.recurso-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.dataset.target;
+                const target = document.getElementById(targetId);
+                document.querySelectorAll('.recurso_content, #prevencion-abuso-info').forEach(content => {
+                    if (content !== target) {
+                        content.classList.add('hidden');
+                        content.style.maxHeight = null;
+                    }
+                });
+                if (target.classList.contains('hidden')) {
+                    target.classList.remove('hidden');
+                    if (target.classList.contains('recurso-content')) {
+                        target.style.maxHeight = '0px';
+                        setTimeout(() => {
+                            target.style.maxHeight = target.scrollHeight + 'px';
+                        }, 10);
+                        setTimeout(() => {
+                            target.style.maxHeight = null;
+                        }, 400);
+                    }
+                }
+                // Scroll centrado: ajusta para que el bloque quede más abajo del centro visual
+                const header = document.getElementById('main-header');
+                const headerHeight = header ? header.offsetHeight : 0;
+                const rect = target.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                // Ajusta el offset para que quede más abajo del centro (por ejemplo, 65% de la ventana)
+                const targetY = rect.top + scrollTop - (window.innerHeight * 0.50) + (target.offsetHeight / 2) - headerHeight;
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>
