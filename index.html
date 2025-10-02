@@ -338,27 +338,27 @@
                         <p class="text-gray-600">
                             Sesiones personalizadas para abordar ansiedad, depresión o problemas de comportamiento.
                         </p>
-                        <a href="#contacto" class="mt-4 inline-block text-secondary-mint font-semibold hover:underline">Saber Más &rarr;</a>
+                        <a href="servicios.html" class="mt-4 inline-block text-secondary-mint font-semibold hover:underline">Saber Más &rarr;</a>
                     </div>
                     
                     <!-- Tarjeta 2: Terapia Familiar -->
                     <div class="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-deep-green">
                         <div class="text-5xl text-deep-green mb-4">👪</div>
-                        <h3 class="text-2xl font-bold text-primary-blue mb-3">Terapia Familiar</h3>
-                        <p class="text-gray-600">
+                        <h3 class="tet-2xl font-bold text-primary-blue mb-3">Terapia Familiar</h3>
+                        <p class="text600">
                             Mejora la comunicación, resuelve conflictos y fortalece los lazos familiares.
                         </p>
-                        <a href="#contacto" class="mt-4 inline-block text-deep-green font-semibold hover:underline">Saber Más &rarr;</a>
+                        <a href="servicios.html" class="mt-4 inline-block text-secondary-mint font-semibold hover:underline">Saber Más &rarr;</a>
                     </div>
 
-                    <!-- Tarjeta 3: Evaluaciones -->
+                  <!-- Tarjeta 3: Evaluaciones -->
                     <div class="bg-white p-8 rounded-xl shadow-lg card-hover border-t-4 border-accent-yellow">
                         <div class="text-5xl text-accent-yellow mb-4">🔍</div>
                         <h3 class="text-2xl font-bold text-primary-blue mb-3">Evaluación Especializada</h3>
                         <p class="text-gray-600">
                             Diagnósticos precisos para TDAH, trastornos del aprendizaje y otras dificultades.
                         </p>
-                        <a href="#contacto" class="mt-4 inline-block text-accent-yellow font-semibold hover:underline">Saber Más &rarr;</a>
+                        <a href="servicios.html" class="mt-4 inline-block text-secondary-mint font-semibold hover:underline">Saber Más &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -366,41 +366,38 @@
 
         <!-- CTA Final / Contacto -->
         <section id="contacto" class="py-20 bg-background-light">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-primary-blue mb-4 text-shadow-custom text-center">El primer paso es hoy.</h2>
                 <p class="text-xl text-gray-600 mb-8 text-center">
                     Contáctanos para agendar una consulta inicial o resolver cualquier duda.
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Bloque llamar -->
-                    <div class="flex flex-col items-center justify-center bg-white rounded-2xl shadow-xl p-10 border-t-4 border-secondary-mint">
-                        <button id="btn-copiar-tel" type="button" class="inline-flex items-center justify-center px-10 py-4 bg-secondary-mint text-primary-blue text-xl font-bold rounded-full hover:bg-primary-blue hover:text-white transition duration-300 shadow-xl transform hover:scale-105 mb-6">
-                            <svg class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                            Llamar Ahora
-                        </button>
-                        <div class="text-lg text-gray-700 mt-2">Teléfono: <span class="font-bold text-primary-blue">+57 300 214 3384</span></div>
-                        <!-- Notificación de copiado -->
-                        <div id="copiado-notif" class="mt-4 fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg font-semibold text-lg opacity-0 pointer-events-none transition-all duration-500 z-50">
-                            Número copiado al portapapeles
-                        </div>
+                <!-- Formulario grande centrado -->
+                <form id="form-cita" action="https://formspree.io/f/xwprbvlp" method="POST" class="bg-secondary-mint/30 rounded-2xl p-10 shadow-xl border-t-4 border-primary-blue w-full max-w-3xl mx-auto mb-10">
+                    <h3 class="text-3xl font-bold text-primary-blue mb-6 text-center">Agenda tu Cita</h3>
+                    <div class="mb-6">
+                        <label for="nombre" class="block text-primary-blue font-semibold mb-2">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
                     </div>
-                    <!-- Bloque formulario -->
-                    <form id="form-cita" action="https://formspree.io/f/xwprbvlp" method="POST" class="bg-secondary-mint/30 rounded-2xl p-10 shadow-xl border-t-4 border-primary-blue w-full">
-                        <h3 class="text-3xl font-bold text-primary-blue mb-6 text-center">Agenda tu Cita</h3>
-                        <div class="mb-6">
-                            <label for="nombre" class="block text-primary-blue font-semibold mb-2">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block text-primary-blue font-semibold mb-2">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
-                        </div>
-                        <div class="mb-6">
-                            <label for="mensaje" class="block text-primary-blue font-semibold mb-2">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary-blue text-white font-bold py-4 rounded-lg hover:bg-secondary-mint hover:text-primary-blue transition duration-300 text-xl">Enviar</button>
-                    </form>
+                    <div class="mb-6">
+                        <label for="email" class="block text-primary-blue font-semibold mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
+                    </div>
+                    <div class="mb-6">
+                        <label for="mensaje" class="block text-primary-blue font-semibold mb-2">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-blue text-white font-bold py-4 rounded-lg hover:bg-secondary-mint hover:text-primary-blue transition duration-300 text-xl">Enviar</button>
+                </form>
+                <!-- Botón llamar abajo centrado -->
+                <div class="flex flex-col items-center justify-center">
+                    <button id="btn-copiar-tel" type="button" class="inline-flex items-center justify-center px-10 py-4 bg-secondary-mint text-primary-blue text-xl font-bold rounded-full hover:bg-primary-blue hover:text-white transition duration-300 shadow-xl transform hover:scale-105 mb-4">
+                        <svg class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        Llamar Ahora
+                    </button>
+                    <div class="text-lg text-gray-700 mt-2">Teléfono: <span class="font-bold text-primary-blue">+57 300 214 3384</span></div>
+                    <div id="copiado-notif" class="mt-4 fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg font-semibold text-lg opacity-0 pointer-events-none transition-all duration-500 z-50">
+                        Número copiado al portapapeles
+                    </div>
                 </div>
             </div>
         </section>
@@ -526,6 +523,9 @@
             });
         });
     </script>
+</body>
+
+</html>
 </body>
 
 </html>
