@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | RAIZ</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para usar la fuente Inter y un esquema de color calmado -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1c4e7c', // Azul oscuro profesional
+                        'secondary-mint': '#63b4b8', // Menta calmante
+                        'accent-yellow': '#fbbd08', // Amarillo para acentos
+                        'background-light': '#f9f9f9', // Fondo muy suave
+                        'deep-green': '#1e5f38', // Color para el logo RAIZ (Tierra y crecimiento)
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para efectos visuales */
+        .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(30, 95, 56, 0.15); /* Sombra sutil con color verde */
+        }
+        .text-shadow-custom {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* Relación de aspecto fija para imágenes */
+        .aspect-fixed {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+        /* Ajustes para móvil */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-background-light text-gray-800 antialiased">
+
+    <!-- Navbar Fija y Responsiva (RAIZ) -->
+    <header id="main-header" class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="header-content" class="flex justify-between items-center h-26">
+                <!-- Logo/Título RAIZ con Ícono de Árbol -->
+                <a href="index.html" class="flex-shrink-0 flex items-center">
+                    <img src="img.jpg" alt="Logo RAIZ" class="h-24 w-30 rounded-full mr-4 object-cover" />
+                    <span class="text-3xl md:text-4xl font-extrabold font-sans text-deep-green tracking-wide">
+                        R<span class="text-secondary-mint">A</span>I<span class="text-secondary-mint">Z</span>
+                    </span>
+                </a>
+
+                <!-- Menú Desktop -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-primary-blue hover:text-deep-green transition duration-150 ease-in-out font-medium">Inicio</a>
+                    <a href="servicios.html" class="text-primary-blue hover:text-deep-green transition duration-150 ease-in-out font-medium">Servicios</a>
+                    <a href="#contacto" class="text-white bg-deep-green hover:bg-secondary-mint px-6 py-3 rounded-full font-bold text-xl transition duration-300 shadow-lg font-sans">Agenda tu Cita</a>
+                </nav>
+
+                <!-- Botón de Menú Móvil -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-primary-blue hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-deep-green">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white shadow-xl">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Inicio</a>
+                <a href="servicios.html" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Servicios</a>
+                <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-deep-green text-center hover:bg-secondary-mint mt-4">Agenda tu Cita</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero: Visión y Misión -->
+        <section class="relative bg-white pt-20 pb-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-6xl md:text-7xl font-black font-sans text-primary-blue leading-tight mb-10 text-shadow-custom hero-title">
+                        Sobre RAIZ
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-gray-600 mb-12 max-w-4xl mx-auto font-sans hero-subtitle">
+                        Conoce nuestra visión, misión y compromiso con la prevención y el bienestar integral.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 mt-16">
+                    <div class="bg-background-light p-8 rounded-2xl shadow-lg card-hover">
+                        <h2 class="text-4xl font-bold text-deep-green mb-6">Visión</h2>
+                        <p class="text-lg text-gray-700">
+                            Ser un centro referente a nivel regional y nacional en la prevención, atención y reparación del abuso sexual, reconocido por su compromiso humano, profesionalismo y enfoque integral que contribuye a una sociedad más empática, informada y libre de violencia.
+                        </p>
+                    </div>
+                    <div class="bg-background-light p-8 rounded-2xl shadow-lg card-hover">
+                        <h2 class="text-4xl font-bold text-deep-green mb-6">Misión</h2>
+                        <p class="text-lg text-gray-700">
+                            En RAIZ, trabajamos por la protección y el bienestar integral de niñas, niños, adolescentes y sus familias, brindando acompañamiento psicológico, social y jurídico frente a situaciones de abuso sexual. Promovemos la prevención, la educación y la resiliencia, fortaleciendo entornos seguros y relaciones basadas en el respeto, la confianza y la integridad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Crianza Respetuosa -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-5xl font-black text-primary-blue mb-8">Crianza Respetuosa</h2>
+                        <p class="text-lg text-gray-700 mb-6">
+                            En cualquier estilo de crianza, lo básico debe ser el respeto a niños, niñas y adolescentes como sujetos relacionales, que tienen los mismos derechos que cualquier persona adulta y, además, un grupo de derechos que le son consustanciales por su condición de seres humanos en desarrollo.
+                        </p>
+                        <h3 class="text-3xl font-bold text-secondary-mint mb-4">¿Qué es la crianza positiva?</h3>
+                        <p class="text-lg text-gray-700 mb-4">
+                            La crianza positiva refiere que lo básico, en cualquier estilo de crianza, debe ser el respeto a niños, niñas y adolescentes como sujetos relacionales, que tienen los mismos derechos que cualquier persona adulta y, además, un grupo de derechos que le son consustanciales por su condición de seres humanos en desarrollo.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Se trata de una crianza libre de violencias y abusos que, a partir del trato respetuoso desde la educación, cuenta con mejores probabilidades para ser efectiva, saludable, adecuada y promover, no solo los aprendizajes necesarios, sino el bienestar psicológico de los hijos e hijas.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-4">
+                            RAIZ aborda con madres, padres y otras personas cuidadoras de niñas, niños y adolescentes, la importancia de asumir estas prácticas cotidianamente. Ello implica:
+                        </p>
+                        <ul class="list-disc pl-6 text-lg text-gray-700 space-y-2">
+                            <li>La crianza libre de cualquier tipo de violencias.</li>
+                            <li>La diversidad, la libertad y la autonomía: las muchas maneras de ser niño y niña son válidas y justas.</li>
+                            <li>La crianza compartida, en la que madres, padres y otras personas cuidadoras, son igualmente responsables de la educación.</li>
+                            <li>El respeto de los derechos de niños, niñas y adolescentes, en el proceso de su crianza.</li>
+                            <li>La afectividad consciente: educar desde el afecto y que niños, niñas y adolescentes perciban el cariño.</li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="imgseccion1.png" alt="Crianza Respetuosa" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Prevención del abuso sexual infantil y la violencia de género -->
+        <section class="py-20 bg-background-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="flex justify-center">
+                        <img src="imgseccion4.png" alt="Prevención del abuso sexual infantil y la violencia de género" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                    </div>
+                    <div>
+                        <h2 class="text-5xl font-black text-primary-blue mb-8">Prevención del abuso sexual infantil y la violencia de género</h2>
+                        <p class="text-lg text-gray-700 mb-4">
+                            #RAIZ trabaja para que cada niño, niña y adolescente viva en un entorno familiar libre de violencia, abandono y abuso.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Muchas veces sobre hechos de violencia sexual se pone un velo de silencio. Sus perpetradores insisten en mantener lo sucedido en secreto. Las víctimas se paralizan por el miedo y el desconcierto ante lo sucedido. Algunos mitos sobre esta problemática obstaculizan que estas situaciones salgan a la luz, tengan un adecuado curso legal y sea posible el acompañamiento profesional a las víctimas.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Abordar este tema con las familias y docentes y, sobre todo, preparar desde temprana edad, a niñas, niños y adolescentes para identificar a tiempo las señales y actuar ante ellas, son caminos para cerrarle el paso al abuso sexual infantil.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            RAIZ quiere ser parte de esa ruta y promover así al derecho a vivir una infancia y adolescencia sin violencias. ¿Qué relación existe entre la violencia de género y la violencia que afecta a la niñez y la adolescencia? Esta es otra de las preguntas que hace el centro RAIZ en busca de comprender las raíces culturales de estas problemáticas, sus impactos y consecuencias. Reconocer esas violencias, prevenirlas y actuar ante ellas, son pasos fundamentales para contribuir al bienestar integral de niñas, niños y adolescentes en Sitionuevo-Magdalena.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: #Tu voz puede salvar -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-5xl font-black text-primary-blue mb-8">#Tu voz puede salvar</h2>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Transformar comportamientos a favor de la vida sin violencias, requiere modificar imaginarios, creencias, normas y comportamientos, que naturalizan su uso como parte de los estilos de crianza, las prácticas educativas y los modos de relacionarse.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-4">
+                            #Tu voz puede salvar asume el reto de abordar esta problemática a través de la campaña Mídete contra el abuso sexual.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Si eres madre, padre u otra persona a cargo del cuidado de niñas, niños y adolescentes; si eres docente y quieres que tus estudiantes se relacionen y crezcan sin abuso, #Tu voz puede salvar es una campaña pensada en ti. Para educar, amar y convivir sin violencias, pone a tu disposición recursos y textos que promueven la prevención y cuidado de la niñez.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            Si eres adolescente #Tu voz puede salvar e invita a usar una talla sin abuso en todos los espacios donde interactúas, incluso, en la virtualidad. Si desde la labor profesional que realizas o en tu comunidad puedes contribuir a prevenir y atender el abuso que afecta a infantes y adolescentes, cuenta con #RAIZ para cuestionar mitos, tradiciones y prácticas que limitan el derecho de cada niño y niña a vivir sin abuso.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="imgseccion2.png" alt="#Tu voz puede salvar" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Uso Responsable de Redes Sociales -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-5xl font-black text-primary-blue mb-8">Uso Responsable de Redes Sociales</h2>
+                        <p class="text-lg text-gray-700 mb-6">
+                            RAIZ promueve entornos digitales seguros y libres de violencia para el desarrollo integral de niñas, niños y adolescentes. Las tecnologías digitales en red son espacios fundamentales para el crecimiento, pero requieren acompañamiento para una experiencia plena y protegida.
+                        </p>
+                        <h3 class="text-3xl font-bold text-secondary-mint mb-4">Recursos y Definición</h3>
+                        <p class="text-lg text-gray-700 mb-4">
+                            Ofrecemos notas para padres, madres y familiares para acompañar en el uso de dispositivos, plataformas y juegos digitales, formando capacidades para una convivencia segura. Las tecnologías digitales en red incluyen teléfonos móviles, computadoras, consolas, redes sociales y mensajería, con prácticas culturales asociadas.
+                        </p>
+                        <h3 class="text-3xl font-bold text-secondary-mint mb-4">Mitos Comunes</h3>
+                        <div class="grid md:grid-cols-1 gap-4">
+                            <div class="bg-background-light p-4 rounded-lg shadow-sm">
+                                <strong>Aprenden solos:</strong> Necesitan acompañamiento adulto para adquirir habilidades técnicas y sociales de manera segura.
+                            </div>
+                            <div class="bg-background-light p-4 rounded-lg shadow-sm">
+                                <strong>Dominan las tecnologías:</strong> No todos tienen acceso o formación adecuada; la tecnología evoluciona rápidamente.
+                            </div>
+                            <div class="bg-background-light p-4 rounded-lg shadow-sm">
+                                <strong>Solo juegan:</strong> También socializan, aprenden y crean, pero pueden exponerse a riesgos si no se supervisa.
+                            </div>
+                            <div class="bg-background-light p-4 rounded-lg shadow-sm">
+                                <strong>Saben qué evitar:</strong> Compartir experiencias y aprender juntos fortalece la seguridad y el bienestar.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="imgseccion3.png" alt="Uso Responsable de Redes Sociales" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Contacto -->
+        <section id="contacto" class="py-20 bg-background-light">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-primary-blue mb-4 text-shadow-custom text-center">El primer paso es hoy.</h2>
+                <p class="text-xl text-gray-600 mb-8 text-center">
+                    Contáctanos para agendar una consulta inicial o resolver cualquier duda.
+                </p>
+                <form id="form-cita" action="https://formspree.io/f/xwprbvlp" method="POST" class="bg-secondary-mint/30 rounded-2xl p-10 shadow-xl border-t-4 border-primary-blue w-full max-w-3xl mx-auto mb-10">
+                    <h3 class="text-3xl font-bold text-primary-blue mb-6 text-center">Agenda tu Cita</h3>
+                    <div class="mb-6">
+                        <label for="nombre" class="block text-primary-blue font-semibold mb-2">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-primary-blue font-semibold mb-2">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg">
+                    </div>
+                    <div class="mb-6">
+                        <label for="mensaje" class="block text-primary-blue font-semibold mb-2">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-5 py-3 border border-secondary-mint rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue bg-white text-lg"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-blue text-white font-bold py-4 rounded-lg hover:bg-secondary-mint hover:text-primary-blue transition duration-300 text-xl">Enviar</button>
+                </form>
+                <div class="flex flex-col items-center justify-center">
+                    <button id="btn-copiar-tel" type="button" class="inline-flex items-center justify-center px-10 py-4 bg-secondary-mint text-primary-blue text-xl font-bold rounded-full hover:bg-primary-blue hover:text-white transition duration-300 shadow-xl transform hover:scale-105 mb-4">
+                        <svg class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        Llamar Ahora
+                    </button>
+                    <div class="text-lg text-gray-700 mt-2">Teléfono: <span class="font-bold text-primary-blue">+57 300 214 3384</span></div>
+                    <div id="copiado-notif" class="mt-4 fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg font-semibold text-lg opacity-0 pointer-events-none transition-all duration-500 z-50">
+                        Número copiado al portapapeles
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Lógica para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }, 150);
+            });
+        });
+
+        // Scroll suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Copiar número y mostrar notificación
+        document.getElementById('btn-copiar-tel').addEventListener('click', function() {
+            const tel = '+573002143384';
+            navigator.clipboard.writeText(tel).then(() => {
+                const notif = document.getElementById('copiado-notif');
+                notif.classList.remove('opacity-0');
+                notif.classList.add('opacity-100');
+                setTimeout(() => {
+                    notif.classList.remove('opacity-100');
+                    notif.classList.add('opacity-0');
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

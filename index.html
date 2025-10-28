@@ -44,6 +44,24 @@
         .group:hover .dropdown-menu {
             display: block;
         }
+        /* Relación de aspecto fija para imágenes y elementos clave */
+        .aspect-fixed {
+            aspect-ratio: 2 / 3; /* Relación fija para mantener proporciones */
+            object-fit: cover; /* Asegura que se vea bien sin distorsión */
+        }
+        /* Ajustes para móvil: fuentes más pequeñas y mejor espaciado */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem; /* Reducir tamaño en móvil */
+            }
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            .btn-small {
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="font-sans bg-background-light text-gray-800 antialiased">
@@ -93,13 +111,14 @@
                         </button>
                         <!-- Menú desplegable con subtítulos de recursos -->
                         <div class="dropdown-menu absolute hidden w-80 bg-white shadow-xl rounded-lg py-2 mt-0 border-t-4 border-deep-green right-0 z-50 group-hover:block">
+                            <a href="nosotros.html" class="block px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50">Sobre RAÍZ</a>
                             <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="prevencion-abuso-info">Información General</button>
                             <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="prevencion-abuso">¿Cómo prevenir el Abuso Sexual Infantil?</button>
                             <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="senales-abuso">¿Cómo saber cuándo un niño es víctima de Abuso Sexual?</button>
                             <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="ayuda-abuso">¿Dónde buscar ayuda?</button>
                             <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="prevencion-escuela">Prevención del Abuso Sexual en la Escuela</button>
                             <button class="block w-full text-left px-4 py-3 text-sm text-primary-blue font-bold hover:bg-gray-50 recurso-link" data-target="raiz-abuso">¿Qué hace RAÍZ?</button>
-                            
+
                         </div>
                     </div>
 
@@ -145,17 +164,17 @@
                     <!-- Contenido de Texto -->
                     <div class="col-span-12 lg:col-span-6 flex flex-col justify-center text-center lg:text-left">
                         <span class="text-deep-green text-2xl font-black uppercase tracking-widest mb-5 font-sans">R.A.I.Z.</span>
-                        <h1 class="text-6xl md:text-7xl font-black font-sans text-primary-blue leading-tight mb-10 text-shadow-custom">
+                        <h1 class="text-6xl md:text-7xl font-black font-sans text-primary-blue leading-tight mb-10 text-shadow-custom hero-title">
                             Resiliencia, Apoyo, Integridad, Zona Segura.
                         </h1>
-                        <p class="text-2xl md:text-3xl text-gray-600 mb-12 max-w-xl lg:max-w-none mx-auto lg:mx-0 font-sans">
+                        <p class="text-2xl md:text-3xl text-gray-600 mb-12 max-w-xl lg:max-w-none mx-auto lg:mx-0 font-sans hero-subtitle">
                             Somos tu <b>Zona Segura</b> para construir <b>Resiliencia</b>. Ofrecemos <b>Apoyo</b> profesional con <b>Integridad</b> en cada sesión.
                         </p>
-                        <div class="flex justify-center lg:justify-start space-x-6">
-                            <a href="#contacto" class="px-10 py-4 bg-deep-green text-white text-2xl font-bold rounded-full hover:bg-secondary-mint transition duration-300 shadow-xl transform hover:scale-105 font-sans">
+                        <div class="flex justify-center lg:justify-start space-x-4">
+                            <a href="#contacto" class="px-6 py-3 bg-deep-green text-white text-xl font-bold rounded-full hover:bg-secondary-mint transition duration-300 shadow-xl transform hover:scale-105 font-sans btn-small">
                                 Agenda tu Consulta
                             </a>
-                            <a href="#servicios" class="px-10 py-4 text-deep-green border-2 border-deep-green text-2xl font-bold rounded-full hover:bg-deep-green hover:text-white transition duration-300 transform hover:scale-105 font-sans">
+                            <a href="#servicios" class="px-6 py-3 text-deep-green border-2 border-deep-green text-xl font-bold rounded-full hover:bg-deep-green hover:text-white transition duration-300 transform hover:scale-105 font-sans btn-small">
                                 Ver Servicios
                             </a>
                         </div>
@@ -218,37 +237,37 @@
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide">
-                                <img src="01.jpg" alt="Imagen 1" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="01.jpg" alt="Imagen 1" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="02.jpg" alt="Imagen 2" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="02.jpg" alt="Imagen 2" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="03.jpg" alt="Imagen 3" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="03.jpg" alt="Imagen 3" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="04.jpg" alt="Imagen 4" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="04.jpg" alt="Imagen 4" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="05.jpg" alt="Imagen 5" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="05.jpg" alt="Imagen 5" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="06.jpg" alt="Imagen 6" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="06.jpg" alt="Imagen 6" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="07.jpg" alt="Imagen 7" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="07.jpg" alt="Imagen 7" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="08.jpg" alt="Imagen 8" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="08.jpg" alt="Imagen 8" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="09.jpg" alt="Imagen 9" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="09.jpg" alt="Imagen 9" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="10.jpg" alt="Imagen 10" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="10.jpg" alt="Imagen 10" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                             <li class="splide__slide">
-                                <img src="11.jpg" alt="Imagen 11" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                                <img src="11.jpg" alt="Imagen 11" class="w-1/2 aspect-fixed object-cover rounded-2xl mx-auto">
                             </li>
                         </ul>
                     </div>
