@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuración de Tailwind para usar la fuente Inter y un esquema de color calmado -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -160,11 +162,11 @@
                     </div>
 
                     <!-- Imagen Hero grande con partículas -->
-                    <div class="col-span-12 lg:col-span-6 mt-16 lg:mt-0 relative flex items-center justify-center">
-                        <div class="relative w-full flex items-center justify-center">
-                            <img 
-                                src="image (1).png" 
-                                alt="RAIZ : Crece con Apoyo" 
+                    <div class="col-span-12 lg:col-span-6 mt-16 lg:mt-0 relative flex items-center">
+                        <div class="relative w-full flex justify-start items-center">
+                            <img
+                                src="image (1).png"
+                                alt="RAIZ : Crece con Apoyo"
                                 class="w-full max-w-2xl h-[440px] object-cover rounded-3xl shadow-2xl"
                                 style="
                                     box-shadow: 0 0 120px 0 rgba(30,95,56,0.25), 0 0 0 32px rgba(30,95,56,0.10);
@@ -180,6 +182,7 @@
                             "Cultivando la fuerza desde la raíz."
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -202,6 +205,54 @@
                 <p class="text-lg text-gray-700 font-sans">
                     Educar a niñas y niños en el reconocimiento, autocuidado y respeto de su cuerpo con un lenguaje claro, sencillo e información de acuerdo a su edad, es la mejor medida que los protegerá del abuso sexual.
                 </p>
+            </div>
+        </section>
+
+        <!-- Sección de Ruleta de Imágenes -->
+        <section id="galeria" class="py-20 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-black text-primary-blue mb-12 text-center font-sans text-shadow-custom">
+                    Nuestra Galería
+                </h2>
+                <div id="image-carousel" class="splide" aria-label="Galería de imágenes">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="01.jpg" alt="Imagen 1" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="02.jpg" alt="Imagen 2" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="03.jpg" alt="Imagen 3" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="04.jpg" alt="Imagen 4" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="05.jpg" alt="Imagen 5" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="06.jpg" alt="Imagen 6" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="07.jpg" alt="Imagen 7" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="08.jpg" alt="Imagen 8" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="09.jpg" alt="Imagen 9" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="10.jpg" alt="Imagen 10" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="11.jpg" alt="Imagen 11" class="w-3/4 h-[800px] object-cover rounded-2xl mx-auto">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -494,7 +545,7 @@
                 e.preventDefault();
                 const targetId = this.dataset.target;
                 const target = document.getElementById(targetId);
-                document.querySelectorAll('.recurso_content, #prevencion-abuso-info').forEach(content => {
+                document.querySelectorAll('.recurso-content, #prevencion-abuso-info').forEach(content => {
                     if (content !== target) {
                         content.classList.add('hidden');
                         content.style.maxHeight = null;
@@ -522,10 +573,22 @@
                 window.scrollTo({ top: targetY, behavior: 'smooth' });
             });
         });
-    </script>
-</body>
 
-</html>
+        // Inicialización de la Ruleta de Imágenes (Splide.js)
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#image-carousel', {
+                type       : 'loop',
+                direction  : 'ltr',
+                autoplay   : true,
+                interval   : 4000,
+                pauseOnHover: true,
+                perPage    : 1,
+                arrows     : true,
+                pagination : true,
+                keyboard   : 'global',
+            }).mount();
+        });
+    </script>
 </body>
 
 </html>
