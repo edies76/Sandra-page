@@ -63,9 +63,6 @@
                 <!-- Logo/Título RAIZ con Ícono de Árbol -->
                 <a href="index.html" class="flex-shrink-0 flex items-center">
                     <img src="raiz.jpg" alt="Logo RAIZ" class="h-24 w-30 rounded-full mr-4 object-cover" />
-                    <span class="text-3xl md:text-4xl font-extrabold font-sans text-deep-green tracking-wide">
-                        R<span class="text-secondary-mint">A</span>I<span class="text-secondary-mint">Z</span>
-                    </span>
                 </a>
 
                 <!-- Menú Desktop -->
@@ -84,11 +81,23 @@
             </div>
         </div>
 
-        <!-- Menú Móvil Desplegable -->
+        <!-- Menú Móvil Desplegable (oculto por defecto) -->
         <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white shadow-xl">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Inicio</a>
-                <a href="servicios.html" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Servicios</a>
+
+                <!-- Atención Group (Mobile) -->
+                <p class="px-3 pt-2 text-base font-bold text-deep-green">Atención</p>
+                <a href="index.html#servicios" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Terapia Individual</a>
+                <a href="index.html#servicios" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Terapia Familiar y de Pareja</a>
+                <a href="index.html#servicios" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Evaluación Especializada</a>
+
+                <!-- Educación Group (Mobile) -->
+                <p class="px-3 pt-4 text-base font-bold text-deep-green">Recursos</p>
+                <a href="index.html#recursos" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Artículos y Guías</a>
+                <a href="index.html#recursos" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Temas de Interés</a>
+                <a href="index.html#recursos" class="block pl-6 pr-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Eventos y Talleres</a>
+
+                <!-- CTA -->
                 <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-deep-green text-center hover:bg-secondary-mint mt-4">Agenda tu Cita</a>
             </div>
         </div>
@@ -99,7 +108,10 @@
         <section class="relative bg-white pt-20 pb-28 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <h1 class="text-6xl md:text-7xl font-black font-sans text-primary-blue leading-tight mb-10 text-shadow-custom hero-title">
+                    <a href="index.html" class="inline-block mb-8 text-deep-green font-semibold hover:underline">
+                        &larr; Volver a la página principal
+                    </a>
+                    <h1 class="text-5xl md:text-7xl font-black font-sans text-primary-blue leading-tight mb-10 text-shadow-custom hero-title">
                         Sobre RAIZ
                     </h1>
                     <p class="text-2xl md:text-3xl text-gray-600 mb-12 max-w-4xl mx-auto font-sans hero-subtitle">
@@ -126,9 +138,9 @@
         <!-- Sección: Crianza Respetuosa -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-5xl font-black text-primary-blue mb-8">Crianza Respetuosa</h2>
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="w-full lg:w-1/2 lg:order-2">
+                        <h2 class="text-4xl lg:text-5xl font-black text-primary-blue mb-8">Crianza Respetuosa</h2>
                         <p class="text-lg text-gray-700 mb-6">
                             En cualquier estilo de crianza, lo básico debe ser el respeto a niños, niñas y adolescentes como sujetos relacionales, que tienen los mismos derechos que cualquier persona adulta y, además, un grupo de derechos que le son consustanciales por su condición de seres humanos en desarrollo.
                         </p>
@@ -150,8 +162,8 @@
                             <li>La afectividad consciente: educar desde el afecto y que niños, niñas y adolescentes perciban el cariño.</li>
                         </ul>
                     </div>
-                    <div class="flex justify-center">
-                        <img src="imgseccion1.png" alt="Crianza Respetuosa" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                    <div class="w-full lg:w-1/2 flex justify-center lg:order-1">
+                        <img src="imgseccion1.png" alt="Crianza Respetuosa" class="w-full aspect-fixed object-cover rounded-2xl shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -160,12 +172,12 @@
         <!-- Sección: Prevención del abuso sexual infantil y la violencia de género -->
         <section class="py-20 bg-background-light">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="flex justify-center">
-                        <img src="imgseccion4.png" alt="Prevención del abuso sexual infantil y la violencia de género" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <img src="imgseccion4.png" alt="Prevención del abuso sexual infantil y la violencia de género" class="w-full aspect-fixed object-cover rounded-2xl shadow-2xl">
                     </div>
-                    <div>
-                        <h2 class="text-5xl font-black text-primary-blue mb-8">Prevención del abuso sexual infantil y la violencia de género</h2>
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="text-4xl lg:text-5xl font-black text-primary-blue mb-8">Prevención del abuso sexual infantil y la violencia de género</h2>
                         <p class="text-lg text-gray-700 mb-4">
                             #RAIZ trabaja para que cada niño, niña y adolescente viva en un entorno familiar libre de violencia, abandono y abuso.
                         </p>
@@ -186,9 +198,9 @@
         <!-- Sección: #Tu voz puede salvar -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-5xl font-black text-primary-blue mb-8">#Tu voz puede salvar</h2>
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="w-full lg:w-1/2 lg:order-2">
+                        <h2 class="text-4xl lg:text-5xl font-black text-primary-blue mb-8">#Tu voz puede salvar</h2>
                         <p class="text-lg text-gray-700 mb-4">
                             Transformar comportamientos a favor de la vida sin violencias, requiere modificar imaginarios, creencias, normas y comportamientos, que naturalizan su uso como parte de los estilos de crianza, las prácticas educativas y los modos de relacionarse.
                         </p>
@@ -202,8 +214,8 @@
                             Si eres adolescente #Tu voz puede salvar e invita a usar una talla sin abuso en todos los espacios donde interactúas, incluso, en la virtualidad. Si desde la labor profesional que realizas o en tu comunidad puedes contribuir a prevenir y atender el abuso que afecta a infantes y adolescentes, cuenta con #RAIZ para cuestionar mitos, tradiciones y prácticas que limitan el derecho de cada niño y niña a vivir sin abuso.
                         </p>
                     </div>
-                    <div class="flex justify-center">
-                        <img src="imgseccion2.png" alt="#Tu voz puede salvar" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                    <div class="w-full lg:w-1/2 flex justify-center lg:order-1">
+                        <img src="imgseccion2.png" alt="#Tu voz puede salvar" class="w-full aspect-fixed object-cover rounded-2xl shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -212,9 +224,9 @@
         <!-- Sección: Uso Responsable de Redes Sociales -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-5xl font-black text-primary-blue mb-8">Uso Responsable de Redes Sociales</h2>
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="text-4xl lg:text-5xl font-black text-primary-blue mb-8">Uso Responsable de Redes Sociales</h2>
                         <p class="text-lg text-gray-700 mb-6">
                             RAIZ promueve entornos digitales seguros y libres de violencia para el desarrollo integral de niñas, niños y adolescentes. Las tecnologías digitales en red son espacios fundamentales para el crecimiento, pero requieren acompañamiento para una experiencia plena y protegida.
                         </p>
@@ -237,9 +249,10 @@
                                 <strong>Saben qué evitar:</strong> Compartir experiencias y aprender juntos fortalece la seguridad y el bienestar.
                             </div>
                         </div>
+.
                     </div>
-                    <div class="flex justify-center">
-                        <img src="imgseccion3.png" alt="Uso Responsable de Redes Sociales" class="w-full max-w-md aspect-fixed object-cover rounded-2xl shadow-2xl">
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <img src="imgseccion3.png" alt="Uso Responsable de Redes Sociales" class="w-full aspect-fixed object-cover rounded-2xl shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -249,7 +262,7 @@
         <section class="mb-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-center bg-white p-8 rounded-2xl shadow-lg">
-                    <img src="quienes.png" alt="Quiénes somos" class="w-full max-w-md object-cover rounded-2xl shadow-2xl">
+                    <img src="quienes.png" alt="Quiénes somos" class="w-full object-cover rounded-2xl shadow-2xl">
                 </div>
             </div>
         </section>
